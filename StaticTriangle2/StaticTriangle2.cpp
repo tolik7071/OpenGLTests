@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <iostream>
 #include "GLUtils.h"
+#include "FPSCounter.h"
 
 static void error_callback(int error, const char* description);
 static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -97,9 +98,12 @@ int main(int argc, char** argv)
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+	FPSCounter counter;
+
 	while (!glfwWindowShouldClose(window))
 	{
-		std::cout << glfwGetTime() << std::endl;
+		counter.increase();
+		std::cout << counter.fps() << std::endl;
 
 		glClearColor(0.2f, 0.3f, 0.1f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
