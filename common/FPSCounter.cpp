@@ -4,6 +4,8 @@
 
 FPSCounter::FPSCounter()
 {
+	m_ticks = 0;
+	m_fps = 0;
 }
 
 FPSCounter::~FPSCounter()
