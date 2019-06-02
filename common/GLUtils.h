@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <cmath>
+#include <string>
+#include <filesystem>
 
 class GLUtils
 {
@@ -30,4 +32,11 @@ class GLMath
 			double result = radians * 180.0 / GLMath::PI();
 			return result;
 		}
+};
+
+class GLFile
+{
+	public:
+
+		static std::filesystem::path GetFullPathForResource(const std::string& resource);
 };

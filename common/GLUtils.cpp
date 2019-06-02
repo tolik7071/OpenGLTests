@@ -53,3 +53,8 @@
 
 	return program;
 }
+
+/*static */std::filesystem::path GLFile::GetFullPathForResource(const std::string& resource)
+{
+	return (std::filesystem::current_path() / resource);
+}
